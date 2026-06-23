@@ -1,1 +1,1609 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendakwah Islam di Nusantara Sebelum Walisongo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --emerald:   #0D5C3A;
+  --emerald2:  #147a4e;
+  --emerald3:  #1a9960;
+  --gold:      #C9A84C;
+  --gold2:     #E8C96D;
+  --gold3:     #f5e0a0;
+  --navy:      #0a1628;
+  --navy2:     #122040;
+  --white:     #FFFFFF;
+  --cream:     #fdf8ef;
+  --gray:      #94a3b8;
+  --text:      #1e293b;
+}
 
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif;background:#000}
+
+/* ── SLIDE SYSTEM ── */
+.slide{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  display:none;overflow:hidden;
+}
+.slide.active{display:flex}
+
+/* ── NAV BAR ── */
+.nav-bar{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  display:flex;gap:8px;z-index:100;
+  background:rgba(10,22,40,0.75);backdrop-filter:blur(8px);
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:40px;padding:8px 16px;
+}
+.nav-btn{
+  display:flex;align-items:center;gap:5px;
+  padding:6px 14px;border-radius:24px;
+  font-size:11px;font-weight:600;letter-spacing:0.5px;
+  cursor:pointer;border:none;transition:all .2s;
+  font-family:'Inter',sans-serif;
+}
+.nav-btn.home{background:rgba(201,168,76,0.15);color:#E8C96D;border:1px solid rgba(201,168,76,0.4);}
+.nav-btn.home:hover{background:rgba(201,168,76,0.3);}
+.nav-btn.dash{background:rgba(13,92,58,0.25);color:#1a9960;border:1px solid rgba(13,92,58,0.5);}
+.nav-btn.dash:hover{background:rgba(13,92,58,0.45);}
+.nav-btn.prev{background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.2);}
+.nav-btn.prev:hover{background:rgba(255,255,255,0.18);}
+.nav-btn.next{background:var(--emerald2);color:#fff;border:1px solid var(--emerald3);}
+.nav-btn.next:hover{background:var(--emerald3);}
+
+/* ─────────────────────────────────────
+   SLIDE 1 – COVER
+───────────────────────────────────── */
+#s1{
+  background:linear-gradient(145deg,#050e1a 0%,#0a1e12 45%,#061020 100%);
+  flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+}
+.s1-bg{position:absolute;inset:0;pointer-events:none;}
+.s1-bg svg{width:100%;height:100%;}
+
+.s1-bismillah{
+  font-family:'Amiri',serif;font-size:28px;color:var(--gold2);
+  margin-bottom:12px;letter-spacing:2px;position:relative;z-index:2;
+  text-shadow:0 0 30px rgba(201,168,76,0.4);
+}
+.s1-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(201,168,76,0.4);border-radius:30px;
+  padding:4px 16px;margin-bottom:18px;position:relative;z-index:2;
+}
+.s1-badge span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.s1-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;}
+
+.s1-title{
+  font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,46px);
+  font-weight:900;color:#fff;line-height:1.15;
+  margin-bottom:8px;position:relative;z-index:2;
+  max-width:700px;
+}
+.s1-title em{
+  font-style:italic;
+  background:linear-gradient(135deg,#FFE070,#C9A84C,#8a6820);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.s1-sub{
+  font-size:14px;color:rgba(255,255,255,0.55);letter-spacing:1px;
+  margin-bottom:28px;position:relative;z-index:2;
+}
+
+.s1-identity{
+  display:flex;gap:28px;flex-wrap:wrap;justify-content:center;
+  position:relative;z-index:2;margin-bottom:28px;
+}
+.s1-id-item{text-align:center;}
+.s1-id-label{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.s1-id-val{font-size:13px;color:#fff;font-weight:600;margin-top:2px;}
+
+.btn-start{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--emerald2),var(--emerald3));
+  color:#fff;font-weight:700;font-size:14px;
+  padding:14px 34px;border-radius:40px;cursor:pointer;
+  border:none;position:relative;z-index:2;
+  box-shadow:0 6px 30px rgba(13,92,58,0.5);
+  transition:all .25s;font-family:'Inter',sans-serif;letter-spacing:0.5px;
+}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(13,92,58,0.7);}
+
+.s1-orn{
+  display:flex;align-items:center;gap:12px;
+  position:relative;z-index:2;margin:18px 0;
+}
+.s1-orn-line{width:80px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.5));}
+.s1-orn-line.r{background:linear-gradient(90deg,rgba(201,168,76,0.5),transparent);}
+.s1-orn-d{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);}
+
+/* ─────────────────────────────────────
+   SLIDE 2 – DASHBOARD
+───────────────────────────────────── */
+#s2{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 50%,#08121e 100%);
+  flex-direction:column;align-items:center;justify-content:flex-start;
+  padding:28px 30px 70px;overflow-y:auto;
+}
+.dash-header{text-align:center;margin-bottom:22px;}
+.dash-header h2{font-family:'Playfair Display',serif;font-size:26px;color:#fff;font-weight:900;}
+.dash-header p{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+
+.dash-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:12px;width:100%;max-width:820px;
+}
+.dash-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(201,168,76,0.18);
+  border-radius:12px;padding:16px 12px;
+  text-align:center;cursor:pointer;
+  transition:all .22s;position:relative;overflow:hidden;
+}
+.dash-card::before{
+  content:'';position:absolute;inset:0;border-radius:12px;
+  background:linear-gradient(135deg,rgba(13,92,58,0.0),rgba(13,92,58,0.18));
+  opacity:0;transition:opacity .22s;
+}
+.dash-card:hover{border-color:rgba(201,168,76,0.55);transform:translateY(-3px);
+  box-shadow:0 8px 28px rgba(0,0,0,0.4);}
+.dash-card:hover::before{opacity:1;}
+.dash-card:hover .dc-icon{transform:scale(1.12);}
+.dc-icon{font-size:28px;margin-bottom:8px;transition:transform .22s;display:block;}
+.dc-label{font-size:11px;font-weight:600;color:#fff;line-height:1.3;}
+.dc-num{
+  position:absolute;top:8px;right:10px;
+  font-size:9px;color:var(--gold);font-weight:700;letter-spacing:1px;
+}
+
+/* ─────────────────────────────────────
+   SLIDE 3 – PENDAHULUAN
+───────────────────────────────────── */
+#s3{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.slide-hero{
+  background:linear-gradient(135deg,rgba(13,92,58,0.6),rgba(10,22,40,0.8));
+  border-bottom:2px solid rgba(201,168,76,0.3);
+  padding:28px 40px 22px;
+}
+.slide-eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;}
+.slide-title{font-family:'Playfair Display',serif;font-size:28px;color:#fff;font-weight:900;line-height:1.2;}
+.slide-title em{font-style:italic;color:var(--gold2);}
+
+.content-body{padding:24px 40px;}
+
+.info-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.info-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);
+  border-radius:10px;padding:16px;position:relative;overflow:hidden;
+}
+.info-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--gold),var(--emerald3));}
+.ic-icon{font-size:24px;margin-bottom:8px;}
+.ic-title{font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:4px;}
+.ic-text{font-size:11px;color:rgba(255,255,255,0.72);line-height:1.6;}
+
+.highlight-box{
+  background:linear-gradient(135deg,rgba(13,92,58,0.25),rgba(201,168,76,0.08));
+  border:1px solid rgba(201,168,76,0.3);border-radius:10px;
+  padding:16px 20px;margin-top:14px;
+}
+.hb-q{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;
+  color:var(--gold2);line-height:1.6;}
+
+/* ─────────────────────────────────────
+   SLIDE 4 – TUJUAN
+───────────────────────────────────── */
+#s4{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.tujuan-list{display:flex;flex-direction:column;gap:12px;margin-top:4px;}
+.tj-item{
+  display:flex;align-items:flex-start;gap:14px;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(13,92,58,0.4);
+  border-radius:10px;padding:14px 18px;
+  transition:all .2s;
+}
+.tj-item:hover{border-color:rgba(201,168,76,0.5);background:rgba(201,168,76,0.05);}
+.tj-num{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--emerald2),var(--emerald3));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:14px;color:#fff;
+}
+.tj-text{font-size:13px;color:rgba(255,255,255,0.82);line-height:1.6;padding-top:6px;}
+.tj-text strong{color:var(--gold2);}
+
+.cp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;}
+.cp-card{
+  background:rgba(13,92,58,0.18);border:1px solid rgba(13,92,58,0.5);
+  border-radius:8px;padding:12px;text-align:center;
+}
+.cp-icon{font-size:22px;margin-bottom:5px;}
+.cp-label{font-size:10px;font-weight:600;color:var(--gold2);}
+
+/* ─────────────────────────────────────
+   SLIDE 5 – JALUR MASUK ISLAM
+───────────────────────────────────── */
+#s5{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.jalur-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.jalur-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);
+  border-radius:12px;padding:16px 10px;text-align:center;transition:all .22s;
+}
+.jalur-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,0.55);
+  background:rgba(201,168,76,0.06);}
+.jc-icon{font-size:32px;margin-bottom:8px;}
+.jc-title{font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:5px;}
+.jc-desc{font-size:10px;color:rgba(255,255,255,0.62);line-height:1.5;}
+
+.map-visual{
+  background:rgba(13,92,58,0.12);border:1px solid rgba(13,92,58,0.4);
+  border-radius:12px;padding:18px;margin-top:14px;text-align:center;
+}
+.map-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px;}
+
+/* ─────────────────────────────────────
+   SLIDE 6 – TOKOH PENDAKWAH
+───────────────────────────────────── */
+#s6{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.tokoh-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.tokoh-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);
+  border-radius:12px;padding:0;overflow:hidden;transition:all .22s;
+}
+.tokoh-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  border-color:rgba(201,168,76,0.5);}
+.tc-header{
+  padding:14px 16px 10px;
+  background:linear-gradient(135deg,rgba(13,92,58,0.5),rgba(10,22,40,0.6));
+  border-bottom:1px solid rgba(201,168,76,0.2);
+  display:flex;align-items:center;gap:10px;
+}
+.tc-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--emerald2),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.tc-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--gold2);line-height:1.3;}
+.tc-origin{font-size:10px;color:rgba(255,255,255,0.5);}
+.tc-body{padding:12px 16px;}
+.tc-text{font-size:11px;color:rgba(255,255,255,0.72);line-height:1.6;}
+.tc-hikmah{
+  margin-top:8px;padding:8px 10px;
+  background:rgba(201,168,76,0.08);border-left:2px solid var(--gold);
+  border-radius:4px;font-size:10px;color:var(--gold2);font-style:italic;
+}
+
+/* ─────────────────────────────────────
+   SLIDE 7 – METODE DAKWAH
+───────────────────────────────────── */
+#s7{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.metode-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.metode-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(13,92,58,0.4);
+  border-radius:12px;padding:16px 10px;text-align:center;
+  transition:all .22s;position:relative;overflow:hidden;
+}
+.metode-card:hover{transform:translateY(-4px);border-color:var(--emerald3);
+  background:rgba(13,92,58,0.15);}
+.mc-num{
+  position:absolute;top:8px;right:10px;font-size:9px;
+  color:rgba(201,168,76,0.4);font-weight:700;
+}
+.mc-icon{font-size:30px;margin-bottom:10px;}
+.mc-title{font-size:12px;font-weight:700;color:var(--emerald3);margin-bottom:5px;}
+.mc-desc{font-size:10px;color:rgba(255,255,255,0.65);line-height:1.5;}
+
+.quote-strip{
+  background:linear-gradient(135deg,rgba(13,92,58,0.3),rgba(201,168,76,0.1));
+  border:1px solid rgba(201,168,76,0.3);border-radius:10px;
+  padding:14px 20px;margin-top:14px;display:flex;align-items:center;gap:14px;
+}
+.qs-icon{font-size:28px;flex-shrink:0;}
+.qs-text{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:var(--gold2);}
+
+/* ─────────────────────────────────────
+   SLIDE 8 – PUSAT PENYEBARAN
+───────────────────────────────────── */
+#s8{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.pusat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px;}
+.pusat-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);
+  border-radius:12px;padding:14px 10px;text-align:center;transition:all .22s;
+}
+.pusat-card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,0.55);}
+.puc-icon{font-size:28px;margin-bottom:6px;}
+.puc-name{font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:3px;}
+.puc-desc{font-size:9.5px;color:rgba(255,255,255,0.58);line-height:1.45;}
+
+/* ─────────────────────────────────────
+   SLIDE 9 – TIMELINE
+───────────────────────────────────── */
+#s9{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.timeline{position:relative;padding-left:44px;display:flex;flex-direction:column;gap:0;}
+.timeline::before{
+  content:'';position:absolute;left:16px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,var(--gold),var(--emerald3),var(--gold));
+}
+.tl-item{position:relative;padding:0 0 18px;}
+.tl-dot{
+  position:absolute;left:-36px;top:4px;
+  width:20px;height:20px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--emerald2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;color:#fff;font-weight:900;z-index:2;
+  box-shadow:0 0 0 3px rgba(201,168,76,0.2);
+}
+.tl-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);
+  border-radius:10px;padding:13px 16px;transition:all .2s;
+}
+.tl-card:hover{border-color:rgba(201,168,76,0.5);background:rgba(201,168,76,0.05);}
+.tl-abad{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:3px;}
+.tl-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;}
+.tl-desc{font-size:11px;color:rgba(255,255,255,0.65);line-height:1.6;}
+
+/* ─────────────────────────────────────
+   SLIDE 10 – GALERI
+───────────────────────────────────── */
+#s10{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.galeri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.galeri-card{
+  border-radius:12px;overflow:hidden;border:1px solid rgba(201,168,76,0.2);
+  cursor:pointer;transition:all .25s;position:relative;
+}
+.galeri-card:hover{transform:scale(1.02);border-color:rgba(201,168,76,0.6);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+.gc-visual{
+  height:130px;display:flex;align-items:center;justify-content:center;
+  font-size:52px;
+  background:linear-gradient(135deg,rgba(13,92,58,0.4),rgba(10,22,40,0.8));
+  position:relative;
+}
+.gc-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(10,22,40,0.9));
+  padding:10px 12px 8px;
+}
+.gc-title{font-size:12px;font-weight:700;color:#fff;}
+.gc-sub{font-size:10px;color:var(--gold2);}
+
+/* ─────────────────────────────────────
+   SLIDE 11 – VIDEO
+───────────────────────────────────── */
+#s11{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;align-items:center;justify-content:center;padding:60px 40px;
+}
+.video-frame{
+  width:100%;max-width:700px;
+  background:rgba(0,0,0,0.5);border:2px solid rgba(201,168,76,0.3);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.7);
+}
+.video-placeholder{
+  aspect-ratio:16/9;background:rgba(10,22,40,0.8);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+}
+.vp-play{
+  width:64px;height:64px;background:rgba(201,168,76,0.2);
+  border:2px solid rgba(201,168,76,0.5);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  cursor:pointer;transition:all .2s;
+}
+.vp-play:hover{background:rgba(201,168,76,0.35);transform:scale(1.08);}
+.vp-label{font-size:13px;color:rgba(255,255,255,0.6);}
+.vp-url{font-size:11px;color:var(--gold);text-decoration:underline;cursor:pointer;}
+.video-info{padding:14px 20px;border-top:1px solid rgba(201,168,76,0.2);}
+.vi-title{font-family:'Playfair Display',serif;font-size:14px;color:#fff;font-weight:700;}
+.vi-sub{font-size:11px;color:rgba(255,255,255,0.5);margin-top:3px;}
+
+/* ─────────────────────────────────────
+   SLIDE 12 – KUIS
+───────────────────────────────────── */
+#s12{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.kuis-progress{
+  display:flex;align-items:center;gap:10px;padding:14px 40px 0;
+}
+.kp-bar{flex:1;height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;}
+.kp-fill{height:100%;background:linear-gradient(90deg,var(--emerald2),var(--gold));width:10%;
+  transition:width .4s;border-radius:3px;}
+.kp-label{font-size:11px;color:var(--gold);font-weight:600;white-space:nowrap;}
+
+.kuis-body{padding:16px 40px 0;}
+.soal-num{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;}
+.soal-q{font-family:'Playfair Display',serif;font-size:17px;color:#fff;line-height:1.5;margin-bottom:16px;}
+.pilihan-list{display:flex;flex-direction:column;gap:8px;}
+.pilihan-btn{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.15);
+  border-radius:10px;padding:12px 16px;cursor:pointer;
+  transition:all .2s;font-family:'Inter',sans-serif;text-align:left;
+  color:rgba(255,255,255,0.82);font-size:12.5px;
+}
+.pilihan-btn:hover{border-color:var(--emerald3);background:rgba(13,92,58,0.2);}
+.pilihan-btn.correct{border-color:var(--emerald3)!important;background:rgba(13,92,58,0.35)!important;color:#fff;}
+.pilihan-btn.wrong{border-color:#ef4444!important;background:rgba(239,68,68,0.15)!important;}
+.pb-letter{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;
+  background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.35);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:var(--gold);
+}
+.kuis-feedback{
+  display:none;margin-top:14px;padding:14px 18px;border-radius:10px;
+  font-size:13px;font-weight:600;
+}
+.kuis-feedback.correct{background:rgba(13,92,58,0.3);border:1px solid var(--emerald3);color:var(--emerald3);}
+.kuis-feedback.wrong{background:rgba(239,68,68,0.15);border:1px solid #ef4444;color:#f87171;}
+.btn-next-q{
+  display:none;margin-top:12px;
+  background:var(--emerald2);color:#fff;border:none;
+  padding:10px 24px;border-radius:8px;font-size:13px;font-weight:600;
+  cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;
+}
+.btn-next-q:hover{background:var(--emerald3);}
+
+/* ─────────────────────────────────────
+   SLIDE 13 – HASIL KUIS
+───────────────────────────────────── */
+#s13{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px;
+}
+.hasil-icon{font-size:64px;margin-bottom:16px;}
+.hasil-title{font-family:'Playfair Display',serif;font-size:30px;color:#fff;font-weight:900;margin-bottom:6px;}
+.hasil-score{font-size:54px;font-weight:900;margin:8px 0;
+  background:linear-gradient(135deg,var(--gold2),var(--emerald3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hasil-label{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;}
+.hasil-msg{font-size:14px;color:rgba(255,255,255,0.75);max-width:440px;line-height:1.6;margin-bottom:24px;}
+.hasil-btn{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+}
+.hb{
+  padding:12px 28px;border-radius:30px;font-size:13px;font-weight:700;
+  cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:all .2s;
+}
+.hb.retry{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);}
+.hb.retry:hover{background:rgba(255,255,255,0.18);}
+.hb.dash2{background:var(--emerald2);color:#fff;}
+.hb.dash2:hover{background:var(--emerald3);}
+
+/* ─────────────────────────────────────
+   SLIDE 14 – KESIMPULAN
+───────────────────────────────────── */
+#s14{
+  background:linear-gradient(150deg,#061018 0%,#0a1e12 60%,#080e1a 100%);
+  flex-direction:column;padding:0 0 60px;overflow-y:auto;
+}
+.kesimpulan-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:0;}
+.ks-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);
+  border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;
+  transition:all .2s;
+}
+.ks-card:hover{border-color:rgba(201,168,76,0.45);background:rgba(201,168,76,0.04);}
+.ks-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.ks-title{font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:3px;}
+.ks-text{font-size:11px;color:rgba(255,255,255,0.68);line-height:1.55;}
+
+.penutup-box{
+  background:linear-gradient(135deg,rgba(13,92,58,0.28),rgba(201,168,76,0.1));
+  border:1px solid rgba(201,168,76,0.35);border-radius:10px;
+  padding:18px 22px;margin-top:14px;text-align:center;
+}
+.pb-text{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;
+  color:rgba(255,255,255,0.78);line-height:1.7;}
+.pb-ref{font-size:10px;color:var(--gold);margin-top:6px;letter-spacing:1px;}
+
+/* ─────────────────────────────────────
+   SLIDE 15 – PROFIL
+───────────────────────────────────── */
+#s15{
+  background:linear-gradient(145deg,#050e1a 0%,#0a1e12 45%,#061020 100%);
+  flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px;
+}
+.profil-avatar{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--emerald2),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-size:36px;margin:0 auto 16px;
+  box-shadow:0 6px 30px rgba(13,92,58,0.5),0 0 0 4px rgba(201,168,76,0.2);
+}
+.profil-name{font-family:'Playfair Display',serif;font-size:24px;color:#fff;font-weight:900;margin-bottom:4px;}
+.profil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:500px;margin:18px auto 0;}
+.pg-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);
+  border-radius:10px;padding:12px;
+}
+.pg-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:3px;}
+.pg-val{font-size:12px;color:#fff;font-weight:600;}
+.terimakasih{
+  margin-top:24px;font-family:'Playfair Display',serif;
+  font-size:18px;font-style:italic;color:var(--gold2);
+}
+.pesan-penutup{font-size:12px;color:rgba(255,255,255,0.45);margin-top:6px;line-height:1.6;}
+
+/* ─────────────────────────────────────
+   UTILITIES
+───────────────────────────────────── */
+.section-divider{
+  display:flex;align-items:center;gap:12px;margin:14px 0;
+}
+.sd-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.35),transparent);}
+.sd-d{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     SLIDE 1 – COVER
+════════════════════════════════════════ -->
+<div class="slide active" id="s1">
+  <div class="s1-bg">
+    <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="rg1" cx="15%" cy="20%" r="55%">
+          <stop offset="0%" stop-color="#0D5C3A" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#050e1a" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="rg2" cx="88%" cy="82%" r="50%">
+          <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#050e1a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1280" height="720" fill="url(#rg1)"/>
+      <rect width="1280" height="720" fill="url(#rg2)"/>
+      <!-- Geometric Islamic star pattern -->
+      <g opacity="0.07" fill="#C9A84C">
+        <polygon points="80,80 90,60 100,80 120,80 104,92 110,114 90,100 70,114 76,92 60,80" transform="scale(1.5) translate(-20,20)"/>
+        <polygon points="80,80 90,60 100,80 120,80 104,92 110,114 90,100 70,114 76,92 60,80" transform="translate(1100,30) scale(1.8)"/>
+        <polygon points="80,80 90,60 100,80 120,80 104,92 110,114 90,100 70,114 76,92 60,80" transform="translate(50,580) scale(1.3)"/>
+        <polygon points="80,80 90,60 100,80 120,80 104,92 110,114 90,100 70,114 76,92 60,80" transform="translate(1150,580) scale(1.1)"/>
+      </g>
+      <!-- Arabesque lines -->
+      <g opacity="0.08" stroke="#C9A84C" stroke-width="1" fill="none">
+        <circle cx="0" cy="0" r="300"/>
+        <circle cx="1280" cy="720" r="280"/>
+        <circle cx="1280" cy="0" r="180"/>
+        <circle cx="0" cy="720" r="200"/>
+      </g>
+      <!-- Horizontal accent lines -->
+      <line x1="0" y1="160" x2="1280" y2="155" stroke="#0D5C3A" stroke-width="0.8" opacity="0.3"/>
+      <line x1="0" y1="560" x2="1280" y2="565" stroke="#C9A84C" stroke-width="0.8" opacity="0.25"/>
+      <!-- Kapal dagang silhouette hint -->
+      <g transform="translate(980,480)" opacity="0.06" fill="#C9A84C">
+        <path d="M0,0 L60,0 L50,-30 L30,-60 L20,-30 L10,0 Z"/>
+        <path d="M5,-5 L55,-5 L60,20 L0,20 Z"/>
+        <line x1="30" y1="-60" x2="30" y2="20" stroke="#C9A84C" stroke-width="2"/>
+      </g>
+    </svg>
+  </div>
+
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;">
+    <div class="s1-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+
+    <div class="s1-badge">
+      <div class="s1-dot"></div>
+      <span>Sejarah Kebudayaan Islam &nbsp;·&nbsp; SKI</span>
+      <div class="s1-dot"></div>
+    </div>
+
+    <h1 class="s1-title">
+      Pendakwah Islam di Nusantara<br><em>Sebelum Walisongo</em>
+    </h1>
+    <p class="s1-sub">Jejak Awal Penyebaran Islam di Indonesia</p>
+
+    <div class="s1-orn">
+      <div class="s1-orn-line"></div>
+      <div class="s1-orn-d"></div>
+      <div class="s1-orn-line r"></div>
+    </div>
+
+    <div class="s1-identity">
+      <div class="s1-id-item">
+        <div class="s1-id-label">Nama</div>
+        <div class="s1-id-val">Muhammad Lutfi Fadli</div>
+      </div>
+      <div class="s1-id-item">
+        <div class="s1-id-label">NIM</div>
+        <div class="s1-id-val">2410110037</div>
+      </div>
+      <div class="s1-id-item">
+        <div class="s1-id-label">Kelas</div>
+        <div class="s1-id-val">PAI-A4AIR</div>
+      </div>
+      <div class="s1-id-item">
+        <div class="s1-id-label">Mata Pelajaran</div>
+        <div class="s1-id-val">SKI</div>
+      </div>
+    </div>
+
+    <button class="btn-start" onclick="goSlide(2)">
+      ▶ &nbsp;Mulai Pembelajaran
+    </button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 2 – DASHBOARD
+════════════════════════════════════════ -->
+<div class="slide" id="s2">
+  <div class="dash-header">
+    <p>Menu Utama</p>
+    <h2>📚 Dashboard Pembelajaran</h2>
+  </div>
+  <div class="dash-grid">
+    <div class="dash-card" onclick="goSlide(3)">
+      <span class="dc-num">01</span>
+      <span class="dc-icon">🌅</span>
+      <div class="dc-label">Pendahuluan</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(4)">
+      <span class="dc-num">02</span>
+      <span class="dc-icon">🎯</span>
+      <div class="dc-label">Tujuan Pembelajaran</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(5)">
+      <span class="dc-num">03</span>
+      <span class="dc-icon">🗺️</span>
+      <div class="dc-label">Jalur Masuk Islam</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(6)">
+      <span class="dc-num">04</span>
+      <span class="dc-icon">👳</span>
+      <div class="dc-label">Tokoh Pendakwah</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(7)">
+      <span class="dc-num">05</span>
+      <span class="dc-icon">🕌</span>
+      <div class="dc-label">Metode Dakwah</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(8)">
+      <span class="dc-num">06</span>
+      <span class="dc-icon">🏰</span>
+      <div class="dc-label">Pusat Penyebaran</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(9)">
+      <span class="dc-num">07</span>
+      <span class="dc-icon">📅</span>
+      <div class="dc-label">Timeline Sejarah</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(10)">
+      <span class="dc-num">08</span>
+      <span class="dc-icon">🖼️</span>
+      <div class="dc-label">Galeri Sejarah</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(11)">
+      <span class="dc-num">09</span>
+      <span class="dc-icon">▶️</span>
+      <div class="dc-label">Video Pembelajaran</div>
+    </div>
+    <div class="dash-card" onclick="startKuis()">
+      <span class="dc-num">10</span>
+      <span class="dc-icon">📝</span>
+      <div class="dc-label">Kuis Interaktif</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(14)">
+      <span class="dc-num">11</span>
+      <span class="dc-icon">📖</span>
+      <div class="dc-label">Kesimpulan</div>
+    </div>
+    <div class="dash-card" onclick="goSlide(15)">
+      <span class="dc-num">12</span>
+      <span class="dc-icon">👤</span>
+      <div class="dc-label">Profil Penyusun</div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 3 – PENDAHULUAN
+════════════════════════════════════════ -->
+<div class="slide" id="s3">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">01 · Pendahuluan</div>
+    <h2 class="slide-title">Islam Datang Sebelum <em>Walisongo</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="ic-icon">🌊</div>
+        <div class="ic-title">Jalur Maritim</div>
+        <div class="ic-text">Islam masuk ke Nusantara melalui jalur perdagangan laut yang menghubungkan Arab, Persia, India, dan kepulauan Nusantara sejak abad ke-7 Masehi.</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🕌</div>
+        <div class="ic-title">Sebelum Walisongo</div>
+        <div class="ic-text">Jauh sebelum Walisongo berdakwah di Jawa, para ulama dan pendakwah telah membuka jalan bagi perkembangan Islam di berbagai wilayah Nusantara.</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🤝</div>
+        <div class="ic-title">Dakwah Damai</div>
+        <div class="ic-text">Berkat keteladanan akhlak dan kebijaksanaan para pendakwah, Islam dapat diterima secara damai oleh masyarakat yang mayoritas masih beragama Hindu-Buddha.</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">📚</div>
+        <div class="ic-title">Beragam Metode</div>
+        <div class="ic-text">Para pendakwah datang dari berbagai latar belakang dan menggunakan pendekatan yang berbeda — perdagangan, pendidikan, pelayanan sosial, dan pendekatan budaya.</div>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <div class="hb-q">"Pernahkah kalian bertanya, bagaimana Islam pertama kali masuk dan berkembang di Nusantara? Mereka datang dari berbagai daerah dan menyebarkan Islam melalui keteladanan akhlak dan kebijaksanaan yang luar biasa."</div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(2)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(4)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 4 – TUJUAN PEMBELAJARAN
+════════════════════════════════════════ -->
+<div class="slide" id="s4">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">02 · Tujuan Pembelajaran</div>
+    <h2 class="slide-title">Apa yang Akan Kamu <em>Capai?</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="tujuan-list">
+      <div class="tj-item">
+        <div class="tj-num">1</div>
+        <div class="tj-text"><strong>Menjelaskan</strong> proses masuknya Islam ke Nusantara melalui jalur perdagangan, pernikahan, pendidikan, sosial budaya, dan politik.</div>
+      </div>
+      <div class="tj-item">
+        <div class="tj-num">2</div>
+        <div class="tj-text"><strong>Mengidentifikasi</strong> tokoh-tokoh pendakwah Islam sebelum Walisongo beserta latar belakang dan kontribusi masing-masing.</div>
+      </div>
+      <div class="tj-item">
+        <div class="tj-num">3</div>
+        <div class="tj-text"><strong>Menganalisis</strong> metode dakwah Islam pada masa awal — keteladanan, akulturasi budaya, dan pendekatan sosial.</div>
+      </div>
+      <div class="tj-item">
+        <div class="tj-num">4</div>
+        <div class="tj-text"><strong>Mengambil hikmah</strong> dari perjuangan para pendakwah untuk diterapkan dalam kehidupan sehari-hari.</div>
+      </div>
+    </div>
+    <div class="section-divider"><div class="sd-line"></div><div class="sd-d"></div><div class="sd-line"></div></div>
+    <div class="cp-grid">
+      <div class="cp-card">
+        <div class="cp-icon">🧠</div>
+        <div class="cp-label">Kognitif — Memahami</div>
+      </div>
+      <div class="cp-card">
+        <div class="cp-icon">❤️</div>
+        <div class="cp-label">Afektif — Menghayati</div>
+      </div>
+      <div class="cp-card">
+        <div class="cp-icon">✋</div>
+        <div class="cp-label">Psikomotorik — Meneladani</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(3)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(5)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 5 – JALUR MASUK ISLAM
+════════════════════════════════════════ -->
+<div class="slide" id="s5">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">03 · Jalur Masuk Islam</div>
+    <h2 class="slide-title">Lima Jalur Islam Masuk <em>Nusantara</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="jalur-grid">
+      <div class="jalur-card">
+        <div class="jc-icon">⚓</div>
+        <div class="jc-title">Perdagangan</div>
+        <div class="jc-desc">Pedagang Muslim Arab, Persia, dan Gujarat membawa Islam melalui jalur dagang laut Nusantara.</div>
+      </div>
+      <div class="jalur-card">
+        <div class="jc-icon">💍</div>
+        <div class="jc-title">Pernikahan</div>
+        <div class="jc-desc">Pedagang Muslim menikahi putri bangsawan lokal, membawa pengaruh Islam ke kalangan elite.</div>
+      </div>
+      <div class="jalur-card">
+        <div class="jc-icon">🎓</div>
+        <div class="jc-title">Pendidikan</div>
+        <div class="jc-desc">Pesantren dan halaqah ilmu menjadi pusat penyebaran ajaran Islam di berbagai wilayah.</div>
+      </div>
+      <div class="jalur-card">
+        <div class="jc-icon">🎭</div>
+        <div class="jc-title">Sosial Budaya</div>
+        <div class="jc-desc">Nilai Islam diselipkan dalam seni, tradisi, dan adat istiadat yang sudah ada di masyarakat.</div>
+      </div>
+      <div class="jalur-card">
+        <div class="jc-icon">👑</div>
+        <div class="jc-title">Politik</div>
+        <div class="jc-desc">Raja-raja yang memeluk Islam mendorong rakyatnya mengikuti ajaran Islam secara damai.</div>
+      </div>
+    </div>
+    <div class="map-visual">
+      <div class="map-title">🗺️ Peta Jalur Masuk Islam ke Nusantara</div>
+      <svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;">
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#C9A84C" opacity="0.8"/>
+          </marker>
+        </defs>
+        <!-- Route line -->
+        <path d="M80,80 Q200,30 320,80 Q440,130 560,80 Q620,55 640,80" stroke="#C9A84C" stroke-width="2" fill="none" stroke-dasharray="6,4" opacity="0.7" marker-end="url(#arr)"/>
+        <!-- Location dots -->
+        <circle cx="80" cy="80" r="8" fill="#0D5C3A" stroke="#C9A84C" stroke-width="2"/>
+        <text x="80" y="105" fill="#C9A84C" font-size="10" text-anchor="middle" font-family="Inter">Arab / Persia</text>
+        <circle cx="220" cy="60" r="6" fill="#0D5C3A" stroke="#C9A84C" stroke-width="1.5"/>
+        <text x="220" y="48" fill="rgba(255,255,255,0.7)" font-size="9" text-anchor="middle" font-family="Inter">India / Gujarat</text>
+        <circle cx="360" cy="85" r="8" fill="#147a4e" stroke="#E8C96D" stroke-width="2"/>
+        <text x="360" y="108" fill="#E8C96D" font-size="10" text-anchor="middle" font-family="Inter" font-weight="bold">Barus / Aceh</text>
+        <circle cx="490" cy="110" r="7" fill="#147a4e" stroke="#E8C96D" stroke-width="1.5"/>
+        <text x="490" y="130" fill="#E8C96D" font-size="10" text-anchor="middle" font-family="Inter">Samudera Pasai</text>
+        <circle cx="620" cy="72" r="8" fill="#147a4e" stroke="#E8C96D" stroke-width="2"/>
+        <text x="620" y="55" fill="#E8C96D" font-size="10" text-anchor="middle" font-family="Inter" font-weight="bold">Jawa / Gresik</text>
+      </svg>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(4)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(6)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 6 – TOKOH PENDAKWAH
+════════════════════════════════════════ -->
+<div class="slide" id="s6">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">04 · Tokoh Pendakwah</div>
+    <h2 class="slide-title">Para Pelopor Islam <em>Sebelum Walisongo</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="tokoh-grid">
+      <div class="tokoh-card">
+        <div class="tc-header">
+          <div class="tc-avatar">🧕</div>
+          <div>
+            <div class="tc-name">Syekh Jumadil Kubro</div>
+            <div class="tc-origin">📍 Keturunan Rasulullah SAW</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <div class="tc-text">Ulama besar yang datang ke Nusantara dan menyebarkan Islam melalui akhlak mulia, sikap santun, dan pendidikan. Tidak memaksa perubahan, namun membiarkan masyarakat melihat sendiri keindahan Islam melalui teladan beliau.</div>
+          <div class="tc-hikmah">💡 "Keteladanan lebih kuat pengaruhnya daripada sekadar nasihat."</div>
+        </div>
+      </div>
+      <div class="tokoh-card">
+        <div class="tc-header">
+          <div class="tc-avatar">🏔️</div>
+          <div>
+            <div class="tc-name">Syekh Subakir</div>
+            <div class="tc-origin">📍 Persia</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <div class="tc-text">Datang ke Jawa ketika pengaruh Hindu-Buddha sangat kuat. Beliau mempelajari budaya masyarakat terlebih dahulu sebelum berdakwah. Dikaitkan dengan Gunung Tidar dan dikenal membuka jalan Islam di tanah Jawa.</div>
+          <div class="tc-hikmah">💡 "Menghargai perbedaan budaya adalah cara membangun persatuan."</div>
+        </div>
+      </div>
+      <div class="tokoh-card">
+        <div class="tc-header">
+          <div class="tc-avatar">⚓</div>
+          <div>
+            <div class="tc-name">Syekh Mahmud Barus</div>
+            <div class="tc-origin">📍 Barus, Pesisir Sumatra</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <div class="tc-text">Berdakwah di kota pelabuhan Barus yang menjadi pusat perdagangan dari Arab, Persia, dan India. Mengajarkan Al-Qur'an dan akhlak tanpa membedakan suku. Bukti makam Islam kuno di Barus menunjukkan Islam berkembang pesat di sana.</div>
+          <div class="tc-hikmah">💡 "Toleransi dan kemampuan menjalin hubungan baik adalah modal dakwah."</div>
+        </div>
+      </div>
+      <div class="tokoh-card">
+        <div class="tc-header">
+          <div class="tc-avatar">🌾</div>
+          <div>
+            <div class="tc-name">Maulana Malik Ibrahim</div>
+            <div class="tc-origin">📍 Gresik, Jawa Timur</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <div class="tc-text">Mengutamakan kepedulian sosial dalam dakwah. Mengajarkan cara bercocok tanam, membantu orang sakit, dan memperhatikan ekonomi masyarakat sebelum memperkenalkan Islam. Masyarakat percaya karena merasakan manfaat nyata.</div>
+          <div class="tc-hikmah">💡 "Membantu orang lain dengan tulus adalah bentuk dakwah paling efektif."</div>
+        </div>
+      </div>
+    </div>
+    <div class="section-divider" style="margin-top:10px;"><div class="sd-line"></div>
+      <span style="font-size:11px;color:var(--gold);white-space:nowrap;padding:0 8px;">+ Para Ulama Samudera Pasai</span>
+      <div class="sd-line"></div>
+    </div>
+    <div class="info-card" style="margin-top:0;">
+      <div class="ic-icon">🕌</div>
+      <div class="ic-title">Para Ulama Samudera Pasai (Aceh)</div>
+      <div class="ic-text">Menjadikan pendidikan sebagai sarana utama dakwah. Mendirikan pusat pembelajaran Al-Qur'an, hadis, fikih, dan berbagai ilmu keislaman yang melahirkan banyak ulama dan cendekiawan Muslim, sehingga dari Aceh ajaran Islam menyebar ke seluruh Nusantara.</div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(5)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(7)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 7 – METODE DAKWAH
+════════════════════════════════════════ -->
+<div class="slide" id="s7">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">05 · Metode Dakwah</div>
+    <h2 class="slide-title">Cara Bijak Menyebarkan <em>Islam</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="metode-grid">
+      <div class="metode-card">
+        <div class="mc-num">01</div>
+        <div class="mc-icon">✨</div>
+        <div class="mc-title">Keteladanan</div>
+        <div class="mc-desc">Menunjukkan keindahan Islam melalui akhlak mulia, kejujuran, dan kasih sayang dalam kehidupan sehari-hari.</div>
+      </div>
+      <div class="metode-card">
+        <div class="mc-num">02</div>
+        <div class="mc-icon">🚢</div>
+        <div class="mc-title">Perdagangan</div>
+        <div class="mc-desc">Memanfaatkan jalur perdagangan laut sebagai sarana menyebarkan nilai-nilai Islam ke berbagai wilayah.</div>
+      </div>
+      <div class="metode-card">
+        <div class="mc-num">03</div>
+        <div class="mc-icon">📖</div>
+        <div class="mc-title">Pendidikan</div>
+        <div class="mc-desc">Mendirikan pusat pembelajaran, mengajarkan Al-Qur'an, dan membangun komunitas ilmu yang berkelanjutan.</div>
+      </div>
+      <div class="metode-card">
+        <div class="mc-num">04</div>
+        <div class="mc-icon">🎨</div>
+        <div class="mc-title">Akulturasi Budaya</div>
+        <div class="mc-desc">Islam diselaraskan dengan budaya lokal yang tidak bertentangan dengan syariat, menciptakan harmoni.</div>
+      </div>
+      <div class="metode-card">
+        <div class="mc-num">05</div>
+        <div class="mc-icon">🤲</div>
+        <div class="mc-title">Hubungan Sosial</div>
+        <div class="mc-desc">Membantu masyarakat secara langsung — kesehatan, pertanian, ekonomi — sebagai wujud nyata ajaran Islam.</div>
+      </div>
+    </div>
+    <div class="quote-strip">
+      <div class="qs-icon">💬</div>
+      <div class="qs-text">"Para pendakwah tidak mengubah paksa — mereka menunjukkan keindahan Islam melalui cara hidup yang menginspirasi masyarakat untuk mengenal Allah secara sukarela."</div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(6)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(8)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 8 – PUSAT PENYEBARAN
+════════════════════════════════════════ -->
+<div class="slide" id="s8">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">06 · Pusat Penyebaran Islam</div>
+    <h2 class="slide-title">Kota-Kota Penting dalam <em>Sejarah Islam Nusantara</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="pusat-grid">
+      <div class="pusat-card">
+        <div class="puc-icon">🏛️</div>
+        <div class="puc-name">Barus</div>
+        <div class="puc-desc">Pelabuhan tertua di Sumatra. Pusat pertukaran budaya Arab, Persia, dan India. Makam Islam kuno terdapat di sini.</div>
+      </div>
+      <div class="pusat-card">
+        <div class="puc-icon">👑</div>
+        <div class="puc-name">Samudera Pasai</div>
+        <div class="puc-desc">Kerajaan Islam pertama di Nusantara. Pusat pendidikan Islam dan tempat berkumpul pelajar dari seluruh dunia Muslim.</div>
+      </div>
+      <div class="pusat-card">
+        <div class="puc-icon">🕌</div>
+        <div class="puc-name">Aceh</div>
+        <div class="puc-desc">Pusat perkembangan Islam terkuat di Nusantara. Dari sinilah Islam menyebar ke seluruh wilayah kepulauan.</div>
+      </div>
+      <div class="pusat-card">
+        <div class="puc-icon">⚓</div>
+        <div class="puc-name">Gresik</div>
+        <div class="puc-desc">Pintu masuk Islam ke Jawa. Tempat Maulana Malik Ibrahim berdakwah dan makamnya menjadi situs bersejarah.</div>
+      </div>
+      <div class="pusat-card">
+        <div class="puc-icon">🌏</div>
+        <div class="puc-name">Malaka</div>
+        <div class="puc-desc">Pusat perdagangan internasional. Pengaruh Islam dari Malaka menyebar ke seluruh kawasan Asia Tenggara.</div>
+      </div>
+    </div>
+    <div class="map-visual">
+      <div class="map-title">📍 Persebaran Pusat Islam Nusantara</div>
+      <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;">
+        <rect width="700" height="130" fill="rgba(10,22,40,0.5)" rx="8"/>
+        <!-- Connecting lines -->
+        <line x1="100" y1="65" x2="200" y2="50" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="200" y1="50" x2="310" y2="40" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="310" y1="40" x2="450" y2="75" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="450" y1="75" x2="570" y2="60" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="310" y1="40" x2="570" y2="60" stroke="rgba(13,92,58,0.4)" stroke-width="1" stroke-dasharray="3,4"/>
+        <!-- Cities -->
+        <circle cx="100" cy="65" r="10" fill="#0D5C3A" stroke="#C9A84C" stroke-width="2"/>
+        <text x="100" y="69" fill="#E8C96D" font-size="8" text-anchor="middle" font-family="Inter" font-weight="bold">B</text>
+        <text x="100" y="90" fill="#C9A84C" font-size="9" text-anchor="middle" font-family="Inter">Barus</text>
+        <circle cx="200" cy="50" r="10" fill="#0D5C3A" stroke="#C9A84C" stroke-width="2"/>
+        <text x="200" y="54" fill="#E8C96D" font-size="8" text-anchor="middle" font-family="Inter" font-weight="bold">SP</text>
+        <text x="200" y="28" fill="#C9A84C" font-size="9" text-anchor="middle" font-family="Inter">Samudera Pasai</text>
+        <circle cx="310" cy="40" r="12" fill="#147a4e" stroke="#E8C96D" stroke-width="2.5"/>
+        <text x="310" y="44" fill="#fff" font-size="9" text-anchor="middle" font-family="Inter" font-weight="bold">Aceh</text>
+        <circle cx="450" cy="75" r="10" fill="#0D5C3A" stroke="#C9A84C" stroke-width="2"/>
+        <text x="450" y="79" fill="#E8C96D" font-size="8" text-anchor="middle" font-family="Inter" font-weight="bold">G</text>
+        <text x="450" y="100" fill="#C9A84C" font-size="9" text-anchor="middle" font-family="Inter">Gresik</text>
+        <circle cx="570" cy="60" r="10" fill="#0D5C3A" stroke="#C9A84C" stroke-width="2"/>
+        <text x="570" y="64" fill="#E8C96D" font-size="8" text-anchor="middle" font-family="Inter" font-weight="bold">M</text>
+        <text x="570" y="85" fill="#C9A84C" font-size="9" text-anchor="middle" font-family="Inter">Malaka</text>
+      </svg>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(7)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(9)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 9 – TIMELINE
+════════════════════════════════════════ -->
+<div class="slide" id="s9">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">07 · Timeline Sejarah</div>
+    <h2 class="slide-title">Perjalanan Islam di <em>Nusantara</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">7</div>
+        <div class="tl-card">
+          <div class="tl-abad">Abad ke-7 M</div>
+          <div class="tl-title">Kontak Pertama Islam dengan Nusantara</div>
+          <div class="tl-desc">Pedagang Arab dan Persia mulai berlayar ke kepulauan Nusantara membawa ajaran Islam. Kota Barus di Sumatra menjadi salah satu titik awal kontak Islam dengan Nusantara.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">10</div>
+        <div class="tl-card">
+          <div class="tl-abad">Abad ke-10 M</div>
+          <div class="tl-title">Berkembangnya Komunitas Muslim Awal</div>
+          <div class="tl-desc">Komunitas Muslim mulai terbentuk di pesisir-pesisir Sumatra dan Jawa. Para ulama dari Arab, Persia, dan India mulai menetap dan berdakwah secara aktif.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">13</div>
+        <div class="tl-card">
+          <div class="tl-abad">Abad ke-13 M</div>
+          <div class="tl-title">Berdirinya Samudera Pasai</div>
+          <div class="tl-desc">Kerajaan Islam pertama di Nusantara berdiri di Aceh. Samudera Pasai menjadi pusat penyebaran Islam dan pendidikan yang sangat berpengaruh di seluruh kawasan.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">14</div>
+        <div class="tl-card">
+          <div class="tl-abad">Abad ke-14 M</div>
+          <div class="tl-title">Islam Masuk ke Jawa & Maulana Malik Ibrahim</div>
+          <div class="tl-desc">Islam semakin kuat di Jawa. Maulana Malik Ibrahim berdakwah di Gresik dengan pendekatan sosial yang menyentuh hati masyarakat. Banyak kerajaan mulai memeluk Islam.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">15</div>
+        <div class="tl-card">
+          <div class="tl-abad">Abad ke-15 M — Menjelang Walisongo</div>
+          <div class="tl-title">Fondasi Kuat untuk Walisongo</div>
+          <div class="tl-desc">Berkat perjuangan para pendakwah sebelumnya, Islam telah memiliki akar yang kuat di Nusantara. Fondasi inilah yang memudahkan Walisongo melanjutkan dan memperluas dakwah Islam di Jawa.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(8)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(10)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 10 – GALERI
+════════════════════════════════════════ -->
+<div class="slide" id="s10">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">08 · Galeri Sejarah</div>
+    <h2 class="slide-title">Jejak Peradaban Islam <em>Nusantara</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="galeri-grid">
+      <div class="galeri-card">
+        <div class="gc-visual" style="background:linear-gradient(135deg,#0a2010,#1a4020);">
+          🕌
+          <div class="gc-overlay">
+            <div class="gc-title">Masjid Kuno Barus</div>
+            <div class="gc-sub">Sumatra Barat, abad ke-7</div>
+          </div>
+        </div>
+      </div>
+      <div class="galeri-card">
+        <div class="gc-visual" style="background:linear-gradient(135deg,#1a1000,#3a2800);">
+          🪨
+          <div class="gc-overlay">
+            <div class="gc-title">Batu Nisan Islam Kuno</div>
+            <div class="gc-sub">Samudera Pasai, abad ke-13</div>
+          </div>
+        </div>
+      </div>
+      <div class="galeri-card">
+        <div class="gc-visual" style="background:linear-gradient(135deg,#0a1020,#102040);">
+          📜
+          <div class="gc-overlay">
+            <div class="gc-title">Manuskrip Islam Kuno</div>
+            <div class="gc-sub">Naskah Melayu Islam, abad ke-14</div>
+          </div>
+        </div>
+      </div>
+      <div class="galeri-card">
+        <div class="gc-visual" style="background:linear-gradient(135deg,#100010,#280030);">
+          🚢
+          <div class="gc-overlay">
+            <div class="gc-title">Kapal Dagang Muslim</div>
+            <div class="gc-sub">Jalur Sutra Maritim, abad ke-8</div>
+          </div>
+        </div>
+      </div>
+      <div class="galeri-card">
+        <div class="gc-visual" style="background:linear-gradient(135deg,#001010,#003030);">
+          👑
+          <div class="gc-overlay">
+            <div class="gc-title">Mahkota Kerajaan Pasai</div>
+            <div class="gc-sub">Simbol Kerajaan Islam Pertama</div>
+          </div>
+        </div>
+      </div>
+      <div class="galeri-card">
+        <div class="gc-visual" style="background:linear-gradient(135deg,#101000,#302800);">
+          🌿
+          <div class="gc-overlay">
+            <div class="gc-title">Ornamen Arabesque</div>
+            <div class="gc-sub">Akulturasi Seni Islam-Nusantara</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(9)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(11)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 11 – VIDEO
+════════════════════════════════════════ -->
+<div class="slide" id="s11">
+  <div class="video-frame">
+    <div class="video-placeholder">
+      <div style="font-size:36px;margin-bottom:8px;">🎬</div>
+      <div class="vp-play" onclick="alert('Buka YouTube: Sejarah Islam Masuk Nusantara')">▶</div>
+      <div class="vp-label">Video Pembelajaran SKI</div>
+      <div class="vp-url" onclick="window.open('https://www.youtube.com/results?search_query=sejarah+islam+masuk+nusantara+sebelum+walisongo','_blank')">
+        🔗 Buka di YouTube
+      </div>
+    </div>
+    <div class="video-info">
+      <div class="vi-title">Pendakwah Islam di Nusantara Sebelum Walisongo</div>
+      <div class="vi-sub">Sejarah Kebudayaan Islam (SKI) · Kelas MA/SMA</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:14px;">
+    <p style="font-size:11px;color:rgba(255,255,255,0.45);max-width:400px;">Embed video YouTube di sini. Gunakan iframe YouTube dengan URL video pembelajaran SKI yang relevan untuk integrasi penuh.</p>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(10)">⬅ Back</button>
+    <button class="nav-btn next" onclick="startKuis()">Kuis ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 12 – KUIS INTERAKTIF
+════════════════════════════════════════ -->
+<div class="slide" id="s12">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">10 · Kuis Interaktif</div>
+    <h2 class="slide-title">Uji Pemahamanmu! 📝</h2>
+  </div>
+  <div class="kuis-progress">
+    <div class="kp-bar"><div class="kp-fill" id="kp-fill"></div></div>
+    <div class="kp-label" id="kp-label">Soal 1 / 10</div>
+  </div>
+  <div class="kuis-body">
+    <div class="soal-num" id="soal-num">SOAL 01</div>
+    <div class="soal-q" id="soal-q">Loading...</div>
+    <div class="pilihan-list" id="pilihan-list"></div>
+    <div class="kuis-feedback" id="kuis-feedback"></div>
+    <button class="btn-next-q" id="btn-next-q" onclick="nextSoal()">Soal Berikutnya →</button>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 13 – HASIL KUIS
+════════════════════════════════════════ -->
+<div class="slide" id="s13">
+  <div class="hasil-icon" id="hasil-icon">🏆</div>
+  <div class="hasil-title" id="hasil-title">Luar Biasa!</div>
+  <div class="hasil-score" id="hasil-score">90</div>
+  <div class="hasil-label">Nilai Kuis Kamu</div>
+  <div class="hasil-msg" id="hasil-msg">Kamu telah menguasai materi Pendakwah Islam di Nusantara dengan sangat baik. Terus semangat belajar!</div>
+  <div class="hasil-btn">
+    <button class="hb retry" onclick="startKuis()">🔄 Ulangi Kuis</button>
+    <button class="hb dash2" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="hb dash2" onclick="goSlide(14)">📖 Kesimpulan</button>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 14 – KESIMPULAN
+════════════════════════════════════════ -->
+<div class="slide" id="s14">
+  <div class="slide-hero">
+    <div class="slide-eyebrow">11 · Kesimpulan</div>
+    <h2 class="slide-title">Hikmah dari Para <em>Pelopor Dakwah</em></h2>
+  </div>
+  <div class="content-body">
+    <div class="kesimpulan-grid">
+      <div class="ks-card">
+        <div class="ks-icon">🧕</div>
+        <div>
+          <div class="ks-title">Syekh Jumadil Kubro</div>
+          <div class="ks-text">Mengajarkan bahwa kebijaksanaan dan keteladanan akhlak adalah cara paling efektif menyentuh hati manusia.</div>
+        </div>
+      </div>
+      <div class="ks-card">
+        <div class="ks-icon">🏔️</div>
+        <div>
+          <div class="ks-title">Syekh Subakir</div>
+          <div class="ks-text">Menunjukkan pentingnya memahami dan menghargai budaya lokal sebagai fondasi dakwah yang bijaksana.</div>
+        </div>
+      </div>
+      <div class="ks-card">
+        <div class="ks-icon">⚓</div>
+        <div>
+          <div class="ks-title">Syekh Mahmud Barus</div>
+          <div class="ks-text">Membuktikan bahwa toleransi dan pendidikan yang inklusif dapat memperkuat penyebaran nilai kebaikan.</div>
+        </div>
+      </div>
+      <div class="ks-card">
+        <div class="ks-icon">🌾</div>
+        <div>
+          <div class="ks-title">Maulana Malik Ibrahim</div>
+          <div class="ks-text">Mencontohkan bahwa kepedulian sosial yang tulus membuka pintu hati masyarakat untuk menerima Islam.</div>
+        </div>
+      </div>
+      <div class="ks-card" style="grid-column:1/-1;">
+        <div class="ks-icon">🕌</div>
+        <div>
+          <div class="ks-title">Para Ulama Samudera Pasai</div>
+          <div class="ks-text">Memperlihatkan bahwa ilmu pengetahuan adalah kunci kemajuan umat dan sarana paling kuat membangun peradaban Islam yang berkelanjutan di Nusantara.</div>
+        </div>
+      </div>
+    </div>
+    <div class="penutup-box">
+      <div class="pb-text">"Para pendakwah tidak hanya mewariskan sejarah, tetapi juga memberikan teladan yang dapat kita praktikkan dalam kehidupan sehari-hari. Dengan meneladani akhlak mereka, kita ikut melanjutkan nilai-nilai kebaikan yang telah mereka tanamkan di Nusantara sejak berabad-abad lalu."</div>
+      <div class="pb-ref">— Buku SKI Pendakwah Islam di Nusantara Sebelum Walisongo</div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <button class="nav-btn home" onclick="goSlide(1)">🏠 Home</button>
+    <button class="nav-btn dash" onclick="goSlide(2)">📚 Dashboard</button>
+    <button class="nav-btn prev" onclick="goSlide(13)">⬅ Back</button>
+    <button class="nav-btn next" onclick="goSlide(15)">Next ➡</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 15 – PROFIL
+════════════════════════════════════════ -->
+<div class="slide" id="s15">
+  <div class="s1-bg">
+    <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="rg3" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#0D5C3A" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#050e1a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1280" height="720" fill="url(#rg3)"/>
+      <circle cx="640" cy="360" r="280" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.12"/>
+      <circle cx="640" cy="360" r="350" fill="none" stroke="#0D5C3A" stroke-width="1" opacity="0.1"/>
+    </svg>
+  </div>
+  <div style="position:relative;z-index:2;width:100%;max-width:500px;">
+    <div class="profil-avatar">👨‍🎓</div>
+    <div class="profil-name">Muhammad Lutfi Fadli</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px;">Mahasiswa Pendidikan Agama Islam</div>
+
+    <div class="profil-grid">
+      <div class="pg-card">
+        <div class="pg-label">NIM</div>
+        <div class="pg-val">2410110037</div>
+      </div>
+      <div class="pg-card">
+        <div class="pg-label">Kelas</div>
+        <div class="pg-val">PAI-A4AIR</div>
+      </div>
+      <div class="pg-card">
+        <div class="pg-label">Mata Kuliah</div>
+        <div class="pg-val">SKI</div>
+      </div>
+    </div>
+
+    <div class="terimakasih">Jazākumullāhu Khayran 🌿</div>
+    <div class="pesan-penutup">
+      Terima kasih telah menggunakan media pembelajaran digital ini.<br>
+      Semoga ilmu yang dipelajari menjadi berkah dan manfaat.<br>
+      <span style="color:var(--gold);font-style:italic;">— Semoga bermanfaat, dunia dan akhirat —</span>
+    </div>
+
+    <div style="margin-top:20px;">
+      <button class="btn-start" onclick="goSlide(1)" style="font-size:12px;padding:10px 24px;">
+        🏠 Kembali ke Beranda
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script>
+// ── NAVIGATION ──────────────────────────
+const TOTAL_SLIDES = 15;
+let currentSlide = 1;
+
+function goSlide(n) {
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  document.getElementById('s' + n).classList.add('active');
+  currentSlide = n;
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+    if (currentSlide < TOTAL_SLIDES) goSlide(currentSlide + 1);
+  }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    if (currentSlide > 1) goSlide(currentSlide - 1);
+  }
+  if (e.key === 'Escape') goSlide(2);
+});
+
+// ── KUIS ────────────────────────────────
+const SOAL = [
+  {
+    q: "Siapakah tokoh pendakwah Islam yang dikenal berasal dari Persia dan dikaitkan dengan Gunung Tidar di Jawa?",
+    pilihan: ["Syekh Jumadil Kubro", "Syekh Subakir", "Maulana Malik Ibrahim", "Syekh Mahmud Barus"],
+    jawaban: 1
+  },
+  {
+    q: "Kota pelabuhan mana di Sumatra yang menjadi salah satu pusat awal masuknya Islam ke Nusantara dan dikenal melalui Syekh Mahmud Barus?",
+    pilihan: ["Malaka", "Gresik", "Barus", "Aceh"],
+    jawaban: 2
+  },
+  {
+    q: "Maulana Malik Ibrahim terkenal dengan metode dakwah yang berfokus pada...",
+    pilihan: ["Kekuatan militer", "Kepedulian sosial dan membantu masyarakat", "Perdagangan rempah-rempah", "Pendirian kerajaan Islam"],
+    jawaban: 1
+  },
+  {
+    q: "Kerajaan Islam pertama di Nusantara yang menjadi pusat pendidikan Islam adalah...",
+    pilihan: ["Kerajaan Majapahit", "Kerajaan Sriwijaya", "Samudera Pasai", "Kesultanan Demak"],
+    jawaban: 2
+  },
+  {
+    q: "Hikmah utama yang dapat dipetik dari dakwah Syekh Jumadil Kubro adalah...",
+    pilihan: ["Menggunakan kekerasan dalam berdakwah", "Keteladanan lebih kuat dari sekadar nasihat", "Melarang semua budaya lokal", "Berdakwah hanya kepada bangsawan"],
+    jawaban: 1
+  },
+  {
+    q: "Jalur masuk Islam ke Nusantara melalui ikatan perkawinan antara pedagang Muslim dengan putri bangsawan lokal disebut jalur...",
+    pilihan: ["Perdagangan", "Pendidikan", "Pernikahan", "Politik"],
+    jawaban: 2
+  },
+  {
+    q: "Para ulama Samudera Pasai menjadikan apa sebagai sarana utama penyebaran Islam?",
+    pilihan: ["Peperangan", "Perdagangan senjata", "Pendidikan dan ilmu pengetahuan", "Upacara adat"],
+    jawaban: 2
+  },
+  {
+    q: "Syekh Subakir mengajarkan bahwa dakwah yang baik harus...",
+    pilihan: ["Menghapus semua tradisi lokal", "Menghargai dan memahami budaya masyarakat setempat", "Menggunakan bahasa Arab saja", "Hanya dilakukan di masjid"],
+    jawaban: 1
+  },
+  {
+    q: "Dari kota mana Islam kemudian menyebar ke seluruh Nusantara sebagai pusat terkuat penyebaran Islam?",
+    pilihan: ["Gresik", "Malaka", "Barus", "Aceh"],
+    jawaban: 3
+  },
+  {
+    q: "Apa peran penting pedagang Muslim dalam penyebaran Islam di Nusantara?",
+    pilihan: ["Melakukan penaklukan wilayah", "Menyebarkan Islam melalui interaksi dagang dan teladan akhlak", "Mendirikan tentara Islam", "Melarang kepercayaan lain"],
+    jawaban: 1
+  }
+];
+
+let currentSoal = 0;
+let score = 0;
+let answered = false;
+
+function startKuis() {
+  currentSoal = 0;
+  score = 0;
+  answered = false;
+  goSlide(12);
+  renderSoal();
+}
+
+function renderSoal() {
+  const s = SOAL[currentSoal];
+  const letters = ['A','B','C','D'];
+  answered = false;
+
+  document.getElementById('soal-num').textContent = 'SOAL ' + String(currentSoal+1).padStart(2,'0');
+  document.getElementById('soal-q').textContent = s.q;
+  document.getElementById('kp-label').textContent = `Soal ${currentSoal+1} / ${SOAL.length}`;
+  document.getElementById('kp-fill').style.width = ((currentSoal / SOAL.length) * 100) + '%';
+
+  const fb = document.getElementById('kuis-feedback');
+  fb.style.display = 'none';
+  fb.className = 'kuis-feedback';
+
+  const nq = document.getElementById('btn-next-q');
+  nq.style.display = 'none';
+
+  const pl = document.getElementById('pilihan-list');
+  pl.innerHTML = '';
+  s.pilihan.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'pilihan-btn';
+    btn.innerHTML = `<span class="pb-letter">${letters[i]}</span>${p}`;
+    btn.onclick = () => checkJawaban(i, btn);
+    pl.appendChild(btn);
+  });
+}
+
+function checkJawaban(idx, btn) {
+  if (answered) return;
+  answered = true;
+  const s = SOAL[currentSoal];
+  const btns = document.querySelectorAll('.pilihan-btn');
+  const fb = document.getElementById('kuis-feedback');
+  const nq = document.getElementById('btn-next-q');
+
+  btns.forEach(b => b.style.pointerEvents = 'none');
+
+  if (idx === s.jawaban) {
+    score++;
+    btn.classList.add('correct');
+    fb.className = 'kuis-feedback correct';
+    fb.innerHTML = '✅ Hebat! Jawaban kamu benar!';
+  } else {
+    btn.classList.add('wrong');
+    btns[s.jawaban].classList.add('correct');
+    fb.className = 'kuis-feedback wrong';
+    fb.innerHTML = `❌ Kurang tepat. Jawaban yang benar: <strong>${['A','B','C','D'][s.jawaban]}. ${s.pilihan[s.jawaban]}</strong>`;
+  }
+  fb.style.display = 'block';
+
+  if (currentSoal < SOAL.length - 1) {
+    nq.textContent = 'Soal Berikutnya →';
+    nq.style.display = 'inline-block';
+  } else {
+    nq.textContent = 'Lihat Hasil →';
+    nq.style.display = 'inline-block';
+    nq.onclick = showHasil;
+  }
+}
+
+function nextSoal() {
+  currentSoal++;
+  renderSoal();
+}
+
+function showHasil() {
+  const nilai = Math.round((score / SOAL.length) * 100);
+  document.getElementById('hasil-score').textContent = nilai;
+
+  let icon, title, msg;
+  if (nilai >= 90) {
+    icon = '🏆'; title = 'Luar Biasa!';
+    msg = 'Kamu telah menguasai materi Pendakwah Islam di Nusantara dengan sangat baik. Terus pertahankan prestasi ini!';
+  } else if (nilai >= 70) {
+    icon = '⭐'; title = 'Bagus Sekali!';
+    msg = 'Pemahaman kamu sudah cukup baik. Pelajari kembali beberapa bagian untuk memperkuat penguasaan materi.';
+  } else if (nilai >= 50) {
+    icon = '💪'; title = 'Terus Semangat!';
+    msg = 'Kamu sudah berusaha. Baca kembali materi dan coba lagi untuk hasil yang lebih baik.';
+  } else {
+    icon = '📚'; title = 'Pelajari Kembali';
+    msg = 'Jangan menyerah! Baca kembali semua materi dari awal, lalu coba kuis lagi. Kamu pasti bisa!';
+  }
+
+  document.getElementById('hasil-icon').textContent = icon;
+  document.getElementById('hasil-title').textContent = title;
+  document.getElementById('hasil-msg').textContent = msg;
+  document.getElementById('btn-next-q').onclick = nextSoal;
+  goSlide(13);
+}
+</script>
+</body>
+</html>
